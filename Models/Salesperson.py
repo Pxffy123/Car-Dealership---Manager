@@ -6,9 +6,21 @@ class Salesperson:
         self.name = name
         self.email = email
         self.password_hash = self.hash_password(password)
-
-    def hash_password(self, password):
+    
+    @staticmethod
+    def hash_password(password):
         return hashlib.sha256(password.encode()).hexdigest()
 
-    def verify_password(self, password):
+    def check_password(self, password):
         return self.password_hash == hashlib.sha256(password.encode()).hexdigest()
+
+    @property   
+    def password(self):
+        return self.password_hash 
+    
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'email': self.email,
+            'password_hash': self.password_hash
+        }
