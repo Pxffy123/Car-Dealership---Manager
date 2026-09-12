@@ -21,3 +21,7 @@ def login_required(func):
                 if self.current_user.role != 'admin':
                     print("Admin access required.")
                     return None
+
+            return func(self, *args, **kwargs)
+
+        return wrapper
