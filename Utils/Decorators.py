@@ -18,3 +18,6 @@ def login_required(func):
                 return None
 
                 # Check if the current user is an admin
+                if self.current_user.role != 'admin':
+                    print("Admin access required.")
+                    return None
