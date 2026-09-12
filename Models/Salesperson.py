@@ -24,3 +24,6 @@ class Salesperson:
             'email': self.email,
             'password_hash': self.password_hash
         }
+
+    def __str__(self):
+        return f"Salesperson(name={self.name}, email={self.email})"
