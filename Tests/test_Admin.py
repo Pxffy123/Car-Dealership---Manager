@@ -1,11 +1,18 @@
-from Tests.test_User import User
+import unittest
+from Models.Admin import Admin
 
+class TestAdmin(unittest.TestCase):
+    
+    def setUp(self):
+        self.admin = Admin(
+            username="admin",
+            password="admin123",
+            email="admin@example.com"
+        )
+    
+    def test_admin_creation(self):
+        self.assertEqual(self.admin.username, "admin")
+        self.assertEqual(self.admin.email, "admin@example.com")
 
-class Admin(User):
-    def __init__(self, username, password, email):
-       
-        super().__init__(username, password, email=email, role="admin")
-
-    def to_dict(self):
-        
-        return super().to_dict()
+    def test_admin_role(self):
+        self.assertEqual(self.admin.role, "admin")
