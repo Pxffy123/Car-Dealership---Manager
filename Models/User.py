@@ -12,4 +12,13 @@ class User:
     def _hash_password(self, password):
         return hashlib.sha256(password.encode()).hexdigest()   
 
-     
+    def to_dict(self):
+        return {
+            "username": self.username,
+            "password_hash": self.password_hash,
+            "email": self.email,
+            "role": self.role
+        }
+
+    def __str__(self):
+        return self.username
