@@ -1,23 +1,22 @@
+import unittest
 import hashlib
 
-class User:
-    # Set default values for email and role so they are optional if needed
-    def __init__(self, username, password, email=None, role="user"):
-        self.username = username
-        self.password_hash = self._hash_password(password)
-        self.email = email
-        self.role = role
+from Models.user import User
 
-    def _hash_password(self, password):
-        return hashlib.sha256(password.encode()).hexdigest()   
+class TestUser(unittest.TestCase):
+    def setUp(self):
+        self.user = User(
+            username="testuser",
+            password="password123",
+            email="john@example.com"
+        )
 
-    def to_dict(self):
-        return {
-            "username": self.username,
-            "password_hash": self.password_hash,
-            "email": self.email,
-            "role": self.role
-        }
+    def test_user_creation(self):
+        self.assertEqual(self.user.username, "john")
+        self.assertEqual(self.user.email, "john@examole.com")
+        self.assertEqual(self.user.role, "user")
+    
+    def test_password_hashing(self):
+        expected_hash = hashlib.sha256("password123".encode()).hexdigest()
 
-    def __str__(self):
-        return self.username
+        self.assertEqual(self.user.password_hash, expected_hash)
