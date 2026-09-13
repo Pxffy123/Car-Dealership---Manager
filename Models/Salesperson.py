@@ -1,3 +1,4 @@
+from Models.User import User
 
 class Salesperson(User):
     def __init__(self, username, password, email=None, sales_target=0):
