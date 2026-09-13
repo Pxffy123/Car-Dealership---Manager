@@ -25,6 +25,9 @@ class TestVehicle(unittest.TestCase):
         self.assertEqual(self.vehicle.color, "Red")
         self.assertEqual(self.vehicle.status, "Available")
 
+    def test_default_status(self):
+        self.assertEqual(self.vehicle.status, "Available")
+        
     def test_sell_vehicle(self):
         result = self.vehicle.sell()
         self.assertTrue(result)
