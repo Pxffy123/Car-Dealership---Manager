@@ -1,21 +1,69 @@
-from Models.User import User 
+from Models.Salesperson import Salesperson
+from Models.User import User
 
-class Salesperson(User):
-    def __init__(self, username, password, email=None, sales_target=0):
-        
-        super().__init__(username, password, email=email, role="salesperson")
-        
-        self.sales_target = sales_target
-        self.total_sales = 0
 
-    def to_dict(self):
-        
-        data = super().to_dict()# Add the specific salesperson fields
-        data.update({
-            "sales_target": self.sales_target,
-            "total_sales": self.total_sales
-        })
-        return data
+def test_salesperson_is_a_user():
+    salesperson = Salesperson(
+        "john_doe",
+        "password123",
+        "john.doe@example.com"
+    )
 
-    def __str__(self):
-        return f"Salesperson(username={self.username}, email={self.email})"
+    assert isinstance(salesperson, User)
+
+
+def test_salesperson_details():
+    salesperson = Salesperson(
+        "jane_doe",
+        "password123",
+        "jane.doe@example.com",
+        sales_target=10
+    )
+
+    assert salesperson.username == "jane_doe"
+    assert salesperson.email == "jane.doe@example.com"
+    assert salesperson.role == "salesperson"
+    assert salesperson.sales_target == 10
+    assert salesperson.total_sales == 0
+
+
+def test_salesperson_password_is_hashed():
+    salesperson = Salesperson(
+        "alice_smith",
+        "securepassword",
+        "alice.smith@example.com"
+    )
+
+    assert salesperson.password != "securepassword"
+    assert len(salesperson.password) == 64
+
+
+def test_salesperson_to_dict():
+    salesperson = Salesperson(
+        "john_doe",
+        "password123",
+        "john.doe@example.com",
+        sales_target=10
+    )
+
+    data = salesperson.to_dict()
+
+    assert data["username"] == "john_doe"
+    assert data["email"] == "john.doe@example.com"
+    assert data["role"] == "salesperson"
+    assert data["sales_target"] == 10
+    assert data["total_sales"] == 0
+    assert "password_hash" in data
+
+
+def test_salesperson_str_representation():
+    salesperson = Salesperson(
+        "jane_doe",
+        "password123",
+        "jane.doe@example.com",
+        sales_target=10
+    )
+
+    assert str(salesperson) == (
+        "Salesperson(username=jane_doe, email=jane.doe@example.com)"
+    )
