@@ -1,29 +1,27 @@
-import hashlib
 
+class Salesperson(User):
+    def __init__(self, username, password, email=None, sales_target=0):
+        super().__init__(
+            username,
+            password,
+            email=email,
+            role="salesperson"
+        )
 
-class Salesperson:
-    def __init__(self, name, email, password):
-        self.name = name
-        self.email = email
-        self.password_hash = self.hash_password(password)
-    
-    @staticmethod
-    def hash_password(password):
-        return hashlib.sha256(password.encode()).hexdigest()
+        self.sales_target = sales_target
+        self.total_sales = 0
 
-    def check_password(self, password):
-        return self.password_hash == hashlib.sha256(password.encode()).hexdigest()
-
-    @property   
+    @property
     def password(self):
-        return self.password_hash 
-    
+        return self.password_hash
+
     def to_dict(self):
-        return {
-            'name': self.name,
-            'email': self.email,
-            'password_hash': self.password_hash
-        }
+        data = super().to_dict()
+        data.update({
+            "sales_target": self.sales_target,
+            "total_sales": self.total_sales
+        })
+        return data
 
     def __str__(self):
-        return f"Salesperson(name={self.name}, email={self.email})"
+        return f"Salesperson(username={self.username}, email={self.email})"
