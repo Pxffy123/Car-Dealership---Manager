@@ -3,7 +3,7 @@ import hashlib
 class User:
     def __init__(self, username, password, role="user"):
         self.username = username
-        # Both classes now hash the plain password automatically on creation
+        
         self.password_hash = self.hash_password(password)
         self.role = role
 
@@ -25,14 +25,14 @@ class User:
         return self.username
 
 
-# Admin inherits everything from User automatically
+
 class Admin(User):
     def __init__(self, username, password, email):
-        # Super sets up username, password hashing, and role="admin"
+        
         super().__init__(username, password, role="admin")
-        self.email = email  # Specific extra field for Admin
+        self.email = email  
 
-    # Overriding to_dict to include the email field
+    
     def to_dict(self):
         data = super().to_dict()
         data["email"] = self.email
