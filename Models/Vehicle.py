@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Vehicle:
     def __init__(self, vehicle_id, make, model, year, price, mileage,
                  color, status="Available"):
@@ -23,3 +24,6 @@ class Vehicle:
             f"- KSH {self.price:,.2f}"
         )
 
+=======
+ 
+>>>>>>> origin/main

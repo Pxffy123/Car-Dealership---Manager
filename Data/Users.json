@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "username": "peris",
         "password_hash": "5d3500f0696643ba60fdef206bdf99259f829f3100785752296cb20c694550c8",
         "email": "pkwamweu@gmail.com",
@@ -18,5 +19,29 @@
         "role": "salesperson",
         "sales_target": 0,
         "total_sales": 0
+=======
+        "username": "admin",
+        "password_hash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        "email": "admin@dealership.co.ke",
+        "role": "admin"
+    },
+    {
+        "username": "Pxffyworks",
+        "password_hash": "5401eea47b5ac998ea644ec9dfd141a8190446c85ee3c64c54caf73fc8751bdb",
+        "email": null,
+        "role": "user"
+    },
+    {
+        "username": "Pxffy",
+        "password_hash": "2b4c8c6d38db43a9b038d256f1b54d9685ecc1578603d82f3f49f2bda9922efe",
+        "email": null,
+        "role": "user"
+    },
+    {
+        "username": "New",
+        "password_hash": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d",
+        "email": "person@gmail.com",
+        "role": "user"
+>>>>>>> origin/main
     }
 ]

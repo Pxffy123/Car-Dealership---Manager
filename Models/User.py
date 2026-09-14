@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import hashlib
 
 
@@ -14,3 +15,6 @@ class User:
 
     def __str__(self):
         return self.username
+=======
+ 
+>>>>>>> origin/main

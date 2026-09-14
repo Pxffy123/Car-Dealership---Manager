@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from Models.User import User
 
 class Salesperson(User):
@@ -26,3 +27,6 @@ class Salesperson(User):
 
     def __str__(self):
         return f"Salesperson(username={self.username}, email={self.email})"
+=======
+ 
+>>>>>>> origin/main
