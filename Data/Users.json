@@ -28,5 +28,17 @@
         "password_hash": "818b5cc5f21d3e6e4e6071c06294528d44595022218446d8b79304d2b766327a",
         "email": "paul@1.com",
         "role": "user"
+    },
+    {
+        "username": "Peris",
+        "password_hash": "5d3500f0696643ba60fdef206bdf99259f829f3100785752296cb20c694550c8",
+        "email": "p@gmail.com",
+        "role": "user"
+    },
+    {
+        "username": "James",
+        "password_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+        "email": "k@gmail.com",
+        "role": "user"
     }
 ]
