@@ -35,7 +35,7 @@ class TestVehicleCollection(unittest.TestCase):
         
         showroom = self.collection.view_cars()
         self.assertEqual(len(showroom), 1)
-        self.assertEqual(showroom.make, "Mazda")
+        self.assertEqual(showroom[0].make, "Mazda")
 
 if __name__ == "__main__":
     unittest.main()

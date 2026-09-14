@@ -40,7 +40,7 @@ class TestVehicle(unittest.TestCase):
         self.assertEqual(self.vehicle.status, "Sold")
 
     def test_str_representation(self):
-        expected_str = "V001: 2020 Toyota Camry - KSH 25,000.00"
+        expected_str = "V001: 2020 Toyota Camry - KSh 25,000.00"
         self.assertEqual(str(self.vehicle), expected_str)
 
 if __name__ == "__main__":
