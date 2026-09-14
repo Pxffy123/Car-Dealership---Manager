@@ -1,102 +1,104 @@
 [
-    {
-        "vehicle_id": "V001",
-        "make": "Toyota",
-        "model": "Harrier",
-        "year": "2022",
-        "price": 5000000.0,
-        "mileage": "35000",
-        "color": "Black",
-        "status": "Sold"
-    },
-    {
-        "vehicle_id": "V002",
-        "make": "Mazda",
-        "model": "CX-5",
-        "year": "2022",
-        "price": 4200000.0,
-        "mileage": "28000",
-        "color": "White",
-        "status": "Sold"
-    },
-    {
-        "vehicle_id": "V003",
-        "make": "Nissan",
-        "model": "X-Trail",
-        "year": "2022",
-        "price": 4500000.0,
-        "mileage": "30000",
-        "color": "Silver",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "V004",
-        "make": "Honda",
-        "model": "CR-V",
-        "year": "2022",
-        "price": 4600000.0,
-        "mileage": "25000",
-        "color": "Red",
-        "status": "Sold"
-    },
-    {
-        "vehicle_id": "V005",
-        "make": "Subaru",
-        "model": "Forester",
-        "year": "2022",
-        "price": 4400000.0,
-        "mileage": "27000",
-        "color": "Blue",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "V006",
-        "make": "Hyundai",
-        "model": "Tucson",
-        "year": "2022",
-        "price": 4000000.0,
-        "mileage": "32000",
-        "color": "Grey",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "V007",
-        "make": "Kia",
-        "model": "Sportage",
-        "year": "2022",
-        "price": 3900000.0,
-        "mileage": "31000",
-        "color": "Green",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "V008",
-        "make": "Volkswagen",
-        "model": "Tiguan",
-        "year": "2022",
-        "price": 4700000.0,
-        "mileage": "26000",
-        "color": "Brown",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "V009",
-        "make": "Ford",
-        "model": "Escape",
-        "year": "2022",
-        "price": 4300000.0,
-        "mileage": "29000",
-        "color": "Silver",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "V010",
-        "make": "Peugeot",
-        "model": "3008",
-        "year": "2022",
-        "price": 4100000.0,
-        "mileage": "27000",
-        "color": "White",
-        "status": "Available"
-    }
+  {
+    "vehicle_id": "V001",
+    "make": "Toyota",
+    "model": "Harrier",
+    "year": "2022",
+    "price": "5000000",
+    "mileage": "35000",
+    "color": "Black",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V002",
+    "make": "Mazda",
+    "model": "CX-5",
+    "year": "2022",
+    "price": "4200000",
+    "mileage": "28000",
+    "color": "White",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V003",
+    "make": "Nissan",
+    "model": "X-Trail",
+    "year": "2022",
+    "price": "4500000",
+    "mileage": "30000",
+    "color": "Silver",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V004",
+    "make": "Honda",
+    "model": "CR-V",
+    "year": "2022",
+    "price": "4600000",
+    "mileage": "25000",
+    "color": "Red",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V005",
+    "make": "Subaru",
+    "model": "Forester",
+    "year": "2022",
+    "price": "4400000",
+    "mileage": "27000",
+    "color": "Blue",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V006",
+    "make": "Hyundai",
+    "model": "Tucson",
+    "year": "2022",
+    "price": "4000000",
+    "mileage": "32000",
+    "color": "Grey",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V007",
+    "make": "Kia",
+    "model": "Sportage",
+    "year": "2022",
+    "price": "3900000",
+    "mileage": "31000",
+    "color": "Green",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V008",
+    "make": "Volkswagen",
+    "model": "Tiguan",
+    "year": "2022",
+    "price": "4700000",
+    "mileage": "26000",
+    "color": "Brown",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V009",
+    "make": "Ford",
+    "model": "Escape",
+    "year": "2022",
+    "price": "4300000",
+    "mileage": "29000",
+    "color": "Silver",
+    "status": "Available"
+  },
+  {
+    "vehicle_id": "V010",
+    "make": "Peugeot",
+    "model": "3008",
+    "year": "2022",
+    "price": "4100000",
+    "mileage": "27000",
+    "color": "White",
+    "status": "Available"
+  }
 ]
+
+

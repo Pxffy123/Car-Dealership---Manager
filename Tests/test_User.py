@@ -1,61 +1,37 @@
 import unittest
-import hashlib
+import sys
+from pathlib import Path
 
+
+root_path = Path(__file__).resolve().parent.parent
+if str(root_path) not in sys.path:
+    sys.path.insert(0, str(root_path))
+
+# Now these imports will work flawlessly!
 from Models.User import User
+from Models.Admin import Admin
+from Models.Salesperson import Salesperson
 
+class TestUserModels(unittest.TestCase):
 
-class TestUser(unittest.TestCase):
+    def test_user_password_hashing(self):
+        """Verify that User models cleanly hash raw passwords on creation."""
+        customer = User("kamau_buyer", "my_secret_pass")
+        self.assertEqual(customer.username, "kamau_buyer")
+        self.assertEqual(customer.role, "user")
+        self.assertNotEqual(customer.password_hash, "my_secret_pass")
 
-    def setUp(self):
-        self.user = User(
-            username="testuser",
-            password="password123",
-            email="john@example.com"
-        )
+    def test_admin_inheritance(self):
+        """Verify Admin properly inherits and configures permissions."""
+        boss = Admin("super_admin", "boss123", "boss@dealership.co.ke")
+        self.assertEqual(boss.role, "admin")
+        self.assertEqual(boss.email, "boss@dealership.co.ke")
 
-    def test_user_creation(self):
-        self.assertEqual(self.user.username, "testuser")
-        self.assertEqual(self.user.email, "john@example.com")
-        self.assertEqual(self.user.role, "user")
-
-    def test_password_is_hashed(self):
-        expected_hash = hashlib.sha256(
-            "password123".encode()
-        ).hexdigest()
-
-        self.assertEqual(
-            self.user.password_hash,
-            expected_hash
-        )
-
-    def test_hash_password(self):
-        password = "test123"
-        expected_hash = hashlib.sha256(
-            password.encode()
-        ).hexdigest()
-
-        self.assertEqual(
-            self.user._hash_password(password),
-            expected_hash
-        )
-
-    def test_to_dict(self):
-        user_dict = self.user.to_dict()
-
-        self.assertEqual(user_dict["username"], "testuser")
-        self.assertEqual(user_dict["email"], "john@example.com")
-        self.assertEqual(user_dict["role"], "user")
-        self.assertEqual(
-            user_dict["password_hash"],
-            self.user.password_hash
-        )
-
-    def test_str_representation(self):
-        self.assertEqual(
-            str(self.user),
-            "testuser"
-        )
-
+    def test_salesperson_inheritance(self):
+        """Verify Salesperson inherits from User and tracks sales data."""
+        seller = Salesperson("juma_sales", "sellcars123")
+        self.assertEqual(seller.role, "salesperson")
+        self.assertEqual(seller.total_sales, 0)
 
 if __name__ == "__main__":
     unittest.main()

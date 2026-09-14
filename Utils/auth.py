@@ -1,3 +1,4 @@
+
 from pathlib import Path
 from Models.User import User
 from Models.Admin import Admin
@@ -61,4 +62,5 @@ class AuthManager:
                         return Salesperson(saved_user["username"], password, saved_user.get("email"), saved_user.get("sales_target", 0))
                     else:
                         return User(saved_user["username"], password, saved_user.get("email"), saved_user["role"])
+        return None
         return None

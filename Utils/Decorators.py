@@ -1,5 +1,4 @@
-from functools import wraps
-
+from functools import wraps 
 
 def login_required(func):
     @wraps(func)
@@ -28,6 +27,5 @@ def admin_required(func):
             print("Admin access required.")
             return None
 
-        return func(self, *args, **kwargs)
-
-    return wrapper
+        return wrapper
+ 
