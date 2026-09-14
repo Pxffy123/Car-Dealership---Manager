@@ -1,22 +1,3 @@
 [
-    {
-        "vehicle_id": "V12MILLI",
-        "make": "Toyota Supra",
-        "model": "Supra",
-        "year": "2005",
-        "price": 13000000.0,
-        "mileage": "10",
-        "color": "green",
-        "status": "Available"
-    },
-    {
-        "vehicle_id": "CAR001",
-        "make": "FORD",
-        "model": "RAPTOR",
-        "year": "2003",
-        "price": 10000000.0,
-        "mileage": "10",
-        "color": "WHITE",
-        "status": "Sold"
-    }
+
 ]
