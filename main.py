@@ -25,11 +25,11 @@ class DealershipApp:
             self.auth.register("admin", "admin123", "admin@dealership.co.ke", "admin")
 
     def public_registration(self):
-        """PUBLIC: Anyone can create a free account. Hardcoded to 'user' role for safety."""
+         #public acc's can register too ....................................
         print("\n--- 👤 REGISTER ACCOUNT ---")
         username = input("Enter Username: ").strip()
         password = input("Enter Password (min 4 chars): ").strip()
-        email = input("Enter Email Address (NOT optional): ").strip()
+        email = input("Enter Email Address (NOT❌ optional(dont guess😡)): ").strip()
         if not email:
             email = None
 
