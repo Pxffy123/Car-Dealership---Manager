@@ -1,7 +1,7 @@
-pathlib import Path
-
 import json
-from 
+from pathlib import Path
+
+
 def load_json(file_path):
     path = Path(file_path)
 
@@ -21,4 +21,3 @@ def save_json(file_path, data):
 
     with path.open("w", encoding="utf-8") as file:
         json.dump(data, file, indent=4)
-
