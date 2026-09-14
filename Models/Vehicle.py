@@ -5,7 +5,7 @@ class Vehicle:
         self.make = make
         self.model = model
         self.year = year
-        self.price = price
+        self.price = float(price)
         self.mileage = mileage
         self.color = color
         self.status = status
