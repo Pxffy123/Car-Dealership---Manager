@@ -23,3 +23,4 @@ class Vehicle:
             f"- KSH {self.price:,.2f}"
         )
 
+ 

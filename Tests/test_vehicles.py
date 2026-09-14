@@ -1,38 +1,41 @@
-class Vehicle:
-    
-    def __init__(self, vehicle_id, make, model, year, price, mileage, color, status="Available"):
-        self.vehicle_id = vehicle_id
-        self.make = make
-        self.model = model
-        self.year = year
-        self.price = price
-        self.mileage = mileage
-        self.color = color
-        self.status = status
+import unittest
+import shutil
+from pathlib import Path
+import sys
 
-    def sell(self):
-        if self.status == "Sold":
-            return False
-        self.status = "Sold"
-        return True
+root_path = Path(__file__).resolve().parent.parent
+if str(root_path) not in sys.path:
+    sys.path.insert(0, str(root_path))
 
-    
-    def to_dict(self):
-        return {
-            "vehicle_id": self.vehicle_id,
-            "make": self.make,
-            "model": self.model,
-            "year": self.year,
-            "price": self.price,
-            "mileage": self.mileage,
-            "color": self.color,
-            "status": self.status
-        }
+from Models.Vehicle import Vehicle, CarCollection
 
-    
-    def __str__(self):
-        return (
-            f"{self.vehicle_id}: "
-            f"{self.year} {self.make} {self.model} "
-            f"- KSh {self.price:,.2f}"
-        )
+class TestVehicleCollection(unittest.TestCase):
+
+    def setUp(self):
+        self.test_dir = Path("TestData_Vehicle")
+        self.test_cars_file = self.test_dir / "Vehicles.json"
+        self.collection = CarCollection(cars_file=self.test_cars_file)
+
+    def tearDown(self):
+        if self.test_dir.exists():
+            shutil.rmtree(self.test_dir)
+
+    def test_vehicle_sales_flow(self):
+        """Verify that cars are created as Available and flip safely to Sold."""
+        car = Vehicle("V77", "Subaru", "Forester", 2018, 2500000, 45000, "Blue")
+        self.assertEqual(car.status, "Available")
+        
+        self.assertTrue(car.sell())
+        self.assertEqual(car.status, "Sold")
+
+    def test_car_collection_persistence(self):
+        """Verify CarCollection saves and pulls car data safely from JSON."""
+        car = Vehicle("V99", "Mazda", "Demio", 2015, 950000, 80000, "Silver")
+        self.collection.add_car(car)
+        
+        showroom = self.collection.view_cars()
+        self.assertEqual(len(showroom), 1)
+        self.assertEqual(showroom.make, "Mazda")
+
+if __name__ == "__main__":
+    unittest.main()

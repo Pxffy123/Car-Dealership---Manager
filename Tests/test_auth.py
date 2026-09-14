@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from Models.User import User
 from Models.Admin import Admin
@@ -31,7 +30,7 @@ class AuthManager:
             if saved_user["username"].lower() == username.lower():
                 raise ValueError("An account with that username already exists.")
 
-       
+        
         if role == "admin":
             if not email:
                 raise ValueError("Admin accounts require an email.")
@@ -49,18 +48,17 @@ class AuthManager:
         username = username.strip()
         users = load_json(self.users_file)
         
-     
+        
         temp = User(username, password)
 
         for saved_user in users:
             if saved_user["username"].lower() == username.lower():
                 if saved_user["password_hash"] == temp.password_hash:
-              
+                    
                     if saved_user["role"] == "admin":
                         return Admin(saved_user["username"], password, saved_user.get("email"))
                     elif saved_user["role"] == "salesperson":
                         return Salesperson(saved_user["username"], password, saved_user.get("email"), saved_user.get("sales_target", 0))
                     else:
                         return User(saved_user["username"], password, saved_user.get("email"), saved_user["role"])
-        return None
         return None
