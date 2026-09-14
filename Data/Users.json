@@ -1,0 +1,22 @@
+[
+    {
+        "username": "peris",
+        "password_hash": "5d3500f0696643ba60fdef206bdf99259f829f3100785752296cb20c694550c8",
+        "email": "pkwamweu@gmail.com",
+        "role": "admin"
+    },
+    {
+        "username": "John",
+        "password_hash": "b4b597c714a8f49103da4dab0266af0ee0ae4f8575250a84855c3d76941cd422",
+        "email": "jk@gmail.com",
+        "role": "user"
+    },
+    {
+        "username": "Cate",
+        "password_hash": "3567335a8c6bb0fc8fb25d665ff964252f2f76cc9f855fa9aa4404f3d34672bf",
+        "email": "ck@gmail.com",
+        "role": "salesperson",
+        "sales_target": 0,
+        "total_sales": 0
+    }
+]
