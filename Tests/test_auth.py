@@ -30,7 +30,7 @@ class AuthManager:
             if saved_user["username"].lower() == username.lower():
                 raise ValueError("An account with that username already exists.")
 
-       
+        # Create the correct object (they hash passwords automatically upon creation now)
         if role == "admin":
             if not email:
                 raise ValueError("Admin accounts require an email.")
@@ -48,13 +48,13 @@ class AuthManager:
         username = username.strip()
         users = load_json(self.users_file)
         
-     
+        # We instantiate a temporary user to cleanly get the hash of the entered password
         temp = User(username, password)
 
         for saved_user in users:
             if saved_user["username"].lower() == username.lower():
                 if saved_user["password_hash"] == temp.password_hash:
-              
+                    # Rebuild the correct object matching our models
                     if saved_user["role"] == "admin":
                         return Admin(saved_user["username"], password, saved_user.get("email"))
                     elif saved_user["role"] == "salesperson":

@@ -1,4 +1,4 @@
-from Tests.test_User import User
+from Models.User import User
 
 
 class Admin(User):
