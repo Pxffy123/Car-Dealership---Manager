@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from functools import wraps
 
 
@@ -32,6 +31,3 @@ def admin_required(func):
         return func(self, *args, **kwargs)
 
     return wrapper
-=======
- 
->>>>>>> origin/main

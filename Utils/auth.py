@@ -61,8 +61,4 @@ class AuthManager:
                         return Salesperson(saved_user["username"], password, saved_user.get("email"), saved_user.get("sales_target", 0))
                     else:
                         return User(saved_user["username"], password, saved_user.get("email"), saved_user["role"])
-<<<<<<< HEAD
         return None
-=======
-        return None
->>>>>>> origin/main

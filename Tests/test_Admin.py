@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import unittest
 from Models.Admin import Admin
-=======
-from Models.User import User
->>>>>>> origin/main
 
 class TestAdmin(unittest.TestCase):
     
