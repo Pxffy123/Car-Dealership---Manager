@@ -8,4 +8,4 @@ class Admin(User):
 
     def to_dict(self):
         
-        return super().to_dict() 
+        return super().to_dict()   
